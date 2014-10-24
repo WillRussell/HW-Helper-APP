@@ -13,6 +13,23 @@
 
 ActiveRecord::Schema.define(version: 20141024170905) do
 
+  create_table "notes", force: true do |t|
+    t.text     "body"
+    t.integer  "problem_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notes", ["problem_id"], name: "index_notes_on_problem_id"
+
+  create_table "problems", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "solved"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
