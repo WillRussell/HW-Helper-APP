@@ -1,6 +1,6 @@
 <h2>Post a problem here</h2>
 
-<%= form_for :problem do |f| %>
+<%= form_for @problem do |f| %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
@@ -8,10 +8,11 @@
 
     <p>
       <%= f.label :description %><br>
-      <%= f.text_area :text %>
+      <%= f.text_area :description %>
     </p>
 
     <p>
       <%= f.submit %>
     </p>
 <% end %>
+

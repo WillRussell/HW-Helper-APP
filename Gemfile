@@ -30,6 +30,12 @@ gem 'foundation-rails'
 gem 'better_errors'
 gem 'devise'
 
+group :development, :test do
+  gem "binding_of_caller"
+  gem "faker"
+  gem "pry-rails"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
