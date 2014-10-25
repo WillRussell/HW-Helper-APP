@@ -11,6 +11,27 @@
       <%= @problem.description %>
     </p>
 
+
+    <p>
+      <strong>Tried:</strong>
+      <%= @problem.tried %>
+    </p>
+
+
+    <% @problem.notes.each do |note| %>
+        <ul>
+
+          <li><%= note.body %></li>
+
+          <li class="button tiny radius round success"><%= link_to 'Destroy note', [note.problem, note],
+                                                                   method: :delete,
+                                                                   data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+
+    <% end %>
+
+
+
     <%= link_to 'Back', problems_path %>
   </div>
 
