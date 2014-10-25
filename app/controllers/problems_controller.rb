@@ -37,8 +37,7 @@ class ProblemsController < ApplicationController
 
 
   def problem_params
-    params.require(:problem).permit(:title, :description, :id)
+    params.require(:problem).permit(:title, :description)
   end
-
 
 end
