@@ -1,15 +1,11 @@
 class ProblemsController < ApplicationController
-  # before_action :set_problem, only: [:show]
-
-  def home
-  end
+  before_action :set_problem, only: [:show]
 
   def index
     @problems = Problem.all
   end
 
   def show
-
   end
 
   def new
@@ -40,6 +36,5 @@ class ProblemsController < ApplicationController
   def problem_params
     params.require(:problem).permit(:title, :description)
   end
-
 
 end
