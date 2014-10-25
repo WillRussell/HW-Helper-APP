@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+
+  event_mailer.event_mail.subject: "Something happened on help.example.com"

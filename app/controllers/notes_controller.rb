@@ -13,6 +13,7 @@ before_action :set_note, only: [:show, :edit, :update, :destroy]
       if @note.save
         format.html { redirect_to problem_path(@problem), notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
+        send_email
       else
         format.html { render :new }
         format.json { render json: @note.errors, status: :unprocessable_entity }
@@ -38,4 +39,7 @@ end
     params.require(:note).permit(:body, :problem_id)
   end
 
+  def send_email
+    EventMailer.event_mail(current_user).deliver # FIXME this should be the user who owns the problem, not current_user
+  end
 end
