@@ -1,15 +1,50 @@
 
+<div class="row">
+  <div class="large-6 columns">
+    <h2>
+      <strong>Title:</strong>
+      <%= @problem.title %>
+    </h2>
 
-<h2>
-  <strong>Title:</strong>
-  <%= @problem.title %>
-</h2>
+    <p>
+      <strong>Description:</strong>
+      <%= @problem.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @problem.description %>
-</p>
-<p>
-  <strong>Tried:</strong>
-  <%= @problem.tried %>
-</p>
+
+    <p>
+      <strong>Tried:</strong>
+      <%= @problem.tried %>
+    </p>
+
+
+    <% @problem.notes.each do |note| %>
+        <ul>
+
+          <li><%= note.body %></li>
+
+          <li class="button tiny radius round success"><%= link_to 'Destroy note', [note.problem, note],
+                                                                   method: :delete,
+                                                                   data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+
+    <% end %>
+
+
+
+    <%= link_to 'Back', problems_path %>
+  </div>
+
+  <div class="large-6 columns">
+    <h3>Add a note to the problem:</h3>
+    <%= form_for([@problem, @problem.notes.build]) do |f| %>
+        <p>
+          <%= f.label :body %><br>
+          <%= f.text_area :body %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+    <% end %>
+  </div>
+</div>
