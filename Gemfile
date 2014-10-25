@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'foundation-rails'
 gem 'better_errors'
 gem 'devise'
+gem 'rails_12factor'
 
 group :development, :test do
   gem "binding_of_caller"
