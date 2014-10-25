@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-  <% @problems.each do |problem| %>
+  <% @problems.order("created_at ASC").each do |problem| %>
       <tr>
         <td><%= problem.title %></td>
         <td><%= problem.description %></td>
