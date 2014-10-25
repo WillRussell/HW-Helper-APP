@@ -1,6 +1,9 @@
 class ProblemsController < ApplicationController
   before_action :set_problem, only: [:show, :destroy, :edit, :update]
 
+  def home
+  end
+
   def index
     @problems = Problem.all
   end
