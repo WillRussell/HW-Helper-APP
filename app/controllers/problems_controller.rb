@@ -1,5 +1,5 @@
 class ProblemsController < ApplicationController
-  before_action :set_problem, only: [:show]
+  before_action :set_problem, only: [:show, :destroy, :edit, :update]
 
   def home
   end
@@ -15,6 +15,22 @@ class ProblemsController < ApplicationController
   @problem = Problem.new
   end
 
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @problem.update(problem_params)
+        format.html { redirect_to @problem, notice: 'List was successfully updated.' }
+        format.json { render :show, status: :ok, location: @problem }
+      else
+        format.html { render :edit }
+        format.json { render json: @problem.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   def create
     @problem = Problem.new(problem_params)
 
@@ -26,6 +42,15 @@ class ProblemsController < ApplicationController
         format.html { render :new }
         format.json { render json: @problem.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+
+  def destroy
+    @problem.destroy
+    respond_to do |format|
+      format.html { redirect_to problems_url, notice: 'Problem was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
