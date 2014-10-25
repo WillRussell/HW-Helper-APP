@@ -1,5 +1,5 @@
 class ProblemsController < ApplicationController
-  # before_action :set_problem, only: [:show]
+  before_action :set_problem, only: [:show]
 
   def home
   end
@@ -9,7 +9,6 @@ class ProblemsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -38,7 +37,7 @@ class ProblemsController < ApplicationController
 
 
   def problem_params
-    params.require(:problem).permit(:title, :description)
+    params.require(:problem).permit(:title, :description, :id)
   end
 
 
