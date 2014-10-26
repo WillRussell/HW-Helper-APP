@@ -1,5 +1,5 @@
 class ProblemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_problem, only: [:show, :destroy, :edit, :update]
 
 
