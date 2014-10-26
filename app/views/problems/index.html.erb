@@ -1,4 +1,10 @@
-<h1>Homework Helper</h1>
+<h1>Open Problems:</h1>
+<div class="post">
+<p>
+  <%= link_to 'Post new problem', new_problem_path %>
+</p>
+</div>
+
 
 <table>
   <thead>
@@ -12,7 +18,7 @@
   </thead>
 
   <tbody>
-  <% @problems.order("created_at ASC").each do |problem| %>
+  <% @problems.order("created_at ASC").where(solved: nil).each do |problem| %>
       <tr>
         <td><%= problem.user.email || "none" %></td>
         <td><%= problem.title %></td>
@@ -26,10 +32,31 @@
   </tbody>
 </table>
 
-<p>
-  <%= link_to 'Post new problem', new_problem_path %>
-</p>
 
+
+<h1>Closed Problems:</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Created</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @problems.order("created_at ASC").where(solved: true).each do |problem| %>
+      <tr>
+        <td><%= problem.user.email || "none" %></td>
+        <td><%= problem.title %></td>
+        <td><%= problem.description.slice(0,80) %></td>
+        <td><%= problem.created_at %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
 
 
 

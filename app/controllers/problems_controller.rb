@@ -7,7 +7,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Problem.where(solved: nil)
+    @problems = Problem.all
   end
 
   def show
