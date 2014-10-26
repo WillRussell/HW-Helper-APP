@@ -3,4 +3,12 @@ class Problem < ActiveRecord::Base
   belongs_to :user
 
 
+  def unanswered
+    where (solved: :false)
+  end
+
+  def answered
+    where (solved: :true)
+  end
+
 end

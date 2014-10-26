@@ -14,7 +14,7 @@ class ProblemsController < ApplicationController
   end
 
   def new
-  @problem = Problem.new
+    @problem = Problem.new
   end
 
   def edit
@@ -48,6 +48,7 @@ class ProblemsController < ApplicationController
   end
 
 
+
   def destroy
     @problem.destroy
     respond_to do |format|
@@ -66,5 +67,4 @@ class ProblemsController < ApplicationController
   def problem_params
     params.require(:problem).permit(:title, :description, :tried)
   end
-
 end
