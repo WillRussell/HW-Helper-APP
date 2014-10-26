@@ -19,11 +19,9 @@
 
 
     <% @problem.notes.each do |note| %>
+        <p><strong>Note Author:</strong> <%= note.user.email || "none" %></p>
         <ul>
-
-          <li><%= note.body %></li>
-          <li><%= note.user.email || "none" %></li>
-
+          <li>Note:<%= note.body %></li>
           <li class="button tiny radius round success"><%= link_to 'Destroy note', [note.problem, note],
                                                                    method: :delete,
                                                                    data: { confirm: 'Are you sure?' } %></li>
