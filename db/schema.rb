@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20141026210815) do
   create_table "problems", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.boolean  "solved" default: false
+    t.boolean  "solved", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "tried"
