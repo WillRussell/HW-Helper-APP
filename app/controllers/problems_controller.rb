@@ -12,7 +12,7 @@ class ProblemsController < ApplicationController
   end
 
   def new
-  @problem = Problem.new
+    @problem = Problem.new
   end
 
   def edit
@@ -32,7 +32,7 @@ class ProblemsController < ApplicationController
 
 
   def create
-    @problem = Problem.new(problem_params)
+    @problem = current_user.problems.build(problem_params)
 
     respond_to do |format|
       if @problem.save
@@ -62,7 +62,7 @@ class ProblemsController < ApplicationController
 
 
   def problem_params
-    params.require(:problem).permit(:title, :description, :tried, :user)
+    params.require(:problem).permit(:title, :description, :tried)
   end
 
 end
