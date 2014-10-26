@@ -1,5 +1,7 @@
 class ProblemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_problem, only: [:show, :destroy, :edit, :update]
+
 
   def home
   end
@@ -48,6 +50,7 @@ class ProblemsController < ApplicationController
   end
 
 
+
   def destroy
     @problem.destroy
     respond_to do |format|
@@ -66,5 +69,4 @@ class ProblemsController < ApplicationController
   def problem_params
     params.require(:problem).permit(:title, :description, :tried, :solved)
   end
-
 end

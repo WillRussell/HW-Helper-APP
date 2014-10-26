@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   resources :problems do
     resources :notes
-    end
+  end
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
+
 
   get 'users/sign_up'
   post 'problems/new' => 'problems#new'

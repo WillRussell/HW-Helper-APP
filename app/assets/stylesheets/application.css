@@ -15,3 +15,30 @@
  *= require foundation_and_overrides
 
  */
+
+@font-face {
+    font-family: '3dumbregular';
+    src: url('fonts/3Dumb-webfont.eot');
+    src: url('fonts/3Dumb-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/3Dumb-webfont.woff') format('woff'),
+    url('fonts/3Dumb-webfont.ttf') format('truetype'),
+    url('fonts/3Dumb-webfont.svg#3dumbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    background: url("http://bglabs.evade.netdna-cdn.com/files/paper-background-2299.jpg") !important;
+
+}
+
+
+h1 {
+    font-family: '3dumbregular';
+    text-align: center;
+}
+
+
+
+}
