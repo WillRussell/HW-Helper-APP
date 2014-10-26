@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
 before_action :set_note, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, only: [:create]
 
   def new
     @note = Note.new
@@ -8,6 +9,7 @@ before_action :set_note, only: [:show, :edit, :update, :destroy]
   def create
     @problem = Problem.find(params[:problem_id])
     @note = @problem.notes.create(note_params)
+    @note.update(user: current_user)
 
     respond_to do |format|
       if @note.save

@@ -22,6 +22,7 @@
         <ul>
 
           <li><%= note.body %></li>
+          <li><%= note.user.email || "none" %></li>
 
           <li class="button tiny radius round success"><%= link_to 'Destroy note', [note.problem, note],
                                                                    method: :delete,
