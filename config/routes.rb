@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+
   get 'users/sign_up'
   post 'problems/new' => 'problems#new'
   get 'problems/show' => 'problems#show'

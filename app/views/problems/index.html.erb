@@ -1,4 +1,4 @@
-<h1>Help solve a problem or post your own question</h1>
+<h1>Homework Helper</h1>
 
 <table>
   <thead>
@@ -14,14 +14,13 @@
   <tbody>
   <% @problems.order("created_at ASC").each do |problem| %>
       <tr>
-        <td><%= problem.user %></td>
+        <td><%= problem.user.inspect %></td>
         <td><%= problem.title %></td>
         <td><%= problem.description.slice(0,80) %></td>
         <td><%= problem.created_at %></td>
         <td><%= link_to 'Show', problem %></td>
         <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
-
       </tr>
   <% end %>
   </tbody>
@@ -30,3 +29,9 @@
 <p>
   <%= link_to 'Post new problem', new_problem_path %>
 </p>
+
+
+
+
+
+
