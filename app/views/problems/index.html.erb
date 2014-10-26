@@ -14,7 +14,7 @@
   <tbody>
   <% @problems.order("created_at ASC").each do |problem| %>
       <tr>
-        <td><%= problem.user.inspect %></td>
+        <td><%= problem.user.email || "none" %></td>
         <td><%= problem.title %></td>
         <td><%= problem.description.slice(0,80) %></td>
         <td><%= problem.created_at %></td>
