@@ -34,7 +34,7 @@ class ProblemsController < ApplicationController
   def create
     @problem = Problem.new
     @problem.update(problem_params)
-    # @problem.update(user: current_user)
+    @problem.update(user: current_user)
 
     respond_to do |format|
       if @problem.save
