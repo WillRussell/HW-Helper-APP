@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
+  title: MyString1
+  user: 1
+  description: MyText1
   solved: false
   created_at: 2014-10-24 12:50:17
 
 two:
-  title: MyString
-  description: MyText
+  title: MyString2
+  user: 2
+  description: MyText2
   solved: false
   created_at: 2014-10-24 12:50:17

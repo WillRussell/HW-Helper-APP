@@ -8,13 +8,8 @@ class ProblemTest < ActiveSupport::TestCase
     end
 
     should "should know if it has been solved" do
-      assert problems(:solved).solved?
-      refute problems(:unsolved).solved?
+      refute problems(:one).solved
     end
 
-    should "should know if it has not been solved" do
-      assert problems(:unsolved).unsolved?
-      refute problems(:solved).unsolved?
-    end
   end
 end
