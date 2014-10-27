@@ -53,6 +53,8 @@
         <td><%= problem.title %></td>
         <td><%= problem.description.slice(0,80) %></td>
         <td><%= problem.created_at %></td>
+        <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
   <% end %>
   </tbody>
