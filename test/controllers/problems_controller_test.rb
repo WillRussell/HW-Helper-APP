@@ -24,13 +24,4 @@ class ProblemsControllerTest < ActionController::TestCase
       assert_equal problems(:one), assigns[:problem]
     end
   end
-
-
-  tegit stst 'get new is successful' do
-    get :new
-    assert_kind_of Problem, assigns(:problem)
-    assert_response :success
-  end
-
-
 end
