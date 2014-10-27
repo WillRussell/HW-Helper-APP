@@ -19,18 +19,15 @@
 
 
     <% @problem.notes.each do |note| %>
-        <p><strong>Note Author:</strong> <%= note.user.email || "none" %></p>
-        <ul>
-          <li>Note:<%= note.body %></li>
-          <li class="button tiny radius round success"><%= link_to 'Destroy note', [note.problem, note],
-                                                                   method: :delete,
-                                                                   data: { confirm: 'Are you sure?' } %></li>
-        </ul>
+        <div class="note">
+          <p><strong>Note Author:</strong> <%= note.user.email || "none" %></p>
 
+          <p>Note:<%= note.body %></p>
+          <p class="button tiny radius round success"><%= link_to 'Destroy note', [note.problem, note],
+                                                                  method: :delete,
+                                                                  data: { confirm: 'Are you sure?' } %></p>
+        </div>
     <% end %>
-
-
-
     <%= link_to 'Back', problems_path %>
   </div>
 

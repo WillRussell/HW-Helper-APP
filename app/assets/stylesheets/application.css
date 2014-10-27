@@ -55,3 +55,8 @@ table {
 li {
     list-style: none;
 }
+
+.note {
+    border: 2px solid;
+    margin-bottom: 10px;
+}
