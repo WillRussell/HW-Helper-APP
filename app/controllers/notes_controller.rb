@@ -12,13 +12,20 @@ before_action :authenticate_user!, only: [:create]
     @note.update(user: current_user)
 
     respond_to do |format|
-      if @note.save
-        format.html { redirect_to problem_path(@problem), notice: 'Note was successfully created.' }
-        format.json { render :show, status: :created, location: @note }
-        send_email
-      else
-        format.html { render :new }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
+      format.html do
+        if @note.save
+          redirect_to @problem
+        else
+          render "problems/show"
+        end
+      end
+
+      format.js do
+        if @note.save
+          render :create, status: :created
+        else
+          render nothing: true, status: :bad_request
+        end
       end
     end
   end
