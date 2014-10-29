@@ -11,6 +11,7 @@ class ProblemsController < ApplicationController
   end
 
   def show
+    @notes = @problem.notes
   end
 
   def new
