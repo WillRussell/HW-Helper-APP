@@ -1,6 +1,6 @@
 <h2>Post a problem here</h2>
 
-<%= form_for @problem do |f| %>
+<%= form_for @problem, :url => problems_path do |f| %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
@@ -16,7 +16,7 @@
       <%= f.text_area :tried %>
     </p>
 
-    <!input type ='hidden' name='user' value= <%= current_user %> >
+    <!input type ='hidden' name='user' value= <%= current_user %> 
 
     <p>
       <%= f.submit %>

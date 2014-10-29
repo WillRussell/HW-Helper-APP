@@ -13,7 +13,7 @@
     <th>Title</th>
     <th>Description</th>
     <th>Created</th>
-    <th colspan="3"></th>
+    <th colspan="4"></th>
   </tr>
   </thead>
 
@@ -27,6 +27,7 @@
         <td><%= link_to 'Show', problem %></td>
         <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
         <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Mark solved", problem_path(problem), method: :patch  %></td>
       </tr>
   <% end %>
   </tbody>

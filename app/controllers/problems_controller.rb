@@ -60,6 +60,13 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def solved
+    @problem.update(:solved)
+    @problem.save
+    remove_solved
+    redirect_to root_path, notice: "Your problem has been closed."
+  end
+
   private
 
   def set_problem
