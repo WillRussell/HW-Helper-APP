@@ -20,7 +20,7 @@
   <tbody>
   <% @problems.order("created_at ASC").where(solved: nil).each do |problem| %>
       <tr>
-        <td><%= problem.user.email || "none" %></td>
+        <td><%= problem.user_email || "none" %></td>
         <td><%= problem.title %></td>
         <td><%= problem.description.slice(0,80) %></td>
         <td><%= problem.created_at %></td>
@@ -49,7 +49,7 @@
   <tbody>
   <% @problems.order("created_at ASC").where(solved: true).each do |problem| %>
       <tr>
-        <td><%= problem.user.email || "none" %></td>
+        <td><%= problem.user_email || "none" %></td>
         <td><%= problem.title %></td>
         <td><%= problem.description.slice(0,80) %></td>
         <td><%= problem.created_at %></td>
