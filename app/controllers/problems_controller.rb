@@ -2,21 +2,12 @@ class ProblemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_problem, only: [:show, :destroy, :edit, :update]
 
-  def home
-  end
-
   def index
     @problems = Problem.all
   end
 
-  def show
-  end
-
   def new
     @problem = Problem.new
-  end
-
-  def edit
   end
 
   def update
