@@ -16,3 +16,7 @@
 /tmp
 
 /.idea
+
+/quality/brakeman.html
+/quality/railsbp.html
+/quality/rubocop.html
