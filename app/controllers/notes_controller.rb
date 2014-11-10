@@ -49,6 +49,6 @@ class NotesController < ApplicationController
   end
 
   def send_email
-    EventMailer.event_mail(current_user).deliver # FIXME this should be the user who owns the problem, not current_user
+    EventMailer.event_mail(current_user).deliver # FIXME: this should be the user who owns the problem, not current_user
   end
 end
