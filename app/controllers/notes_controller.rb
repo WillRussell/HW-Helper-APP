@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-before_action :set_note, only: [:show, :edit, :update, :destroy]
-before_action :authenticate_user!, only: [:create]
+  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create]
 
   def new
     @note = Note.new
@@ -16,7 +16,7 @@ before_action :authenticate_user!, only: [:create]
         if @note.save
           redirect_to @problem
         else
-          render "problems/show"
+          render 'problems/show'
         end
       end
 
@@ -30,15 +30,15 @@ before_action :authenticate_user!, only: [:create]
     end
   end
 
-def destroy
-  @problem = Problem.find(params[:problem_id])
-  @note = @problem.notes.find(params[:id])
-  @note.destroy
-  respond_to do |format|
-    format.html { redirect_to problem_path(@problem), notice: 'Item was successfully destroyed.' }
-    format.json { head :no_content }
+  def destroy
+    @problem = Problem.find(params[:problem_id])
+    @note = @problem.notes.find(params[:id])
+    @note.destroy
+    respond_to do |format|
+      format.html { redirect_to problem_path(@problem), notice: 'Item was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
-end
 
   def set_note
     @note = Note.find(params[:id])

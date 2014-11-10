@@ -2,7 +2,6 @@ class ProblemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_problem, only: [:show, :destroy, :edit, :update]
 
-
   def home
   end
 
@@ -32,7 +31,6 @@ class ProblemsController < ApplicationController
     end
   end
 
-
   def create
     @problem = Problem.new
     @problem.update(problem_params)
@@ -49,8 +47,6 @@ class ProblemsController < ApplicationController
     end
   end
 
-
-
   def destroy
     @problem.destroy
     respond_to do |format|
@@ -64,7 +60,6 @@ class ProblemsController < ApplicationController
   def set_problem
     @problem = Problem.find(params[:id])
   end
-
 
   def problem_params
     params.require(:problem).permit(:title, :description, :tried, :solved)
