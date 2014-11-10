@@ -36,6 +36,9 @@ group :development, :test do
   gem "binding_of_caller"
   gem "faker"
   gem "pry-rails"
+  gem "rubocop", require: false
+  gem "rails_best_practices", require: false
+  gem "brakeman", require: false
 end
 
 gem 'pg'

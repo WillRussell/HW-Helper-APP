@@ -1,26 +1,24 @@
 require 'test_helper'
 
 class ProblemsControllerTest < ActionController::TestCase
-
-
-  context "GET problems#index" do
+  context 'GET problems#index' do
     setup { get :index }
 
-    should render_template("index")
+    should render_template('index')
     should respond_with(:success)
 
-    should "get problems" do
-      assert assigns[:problems], "Should get problems"
+    should 'get problems' do
+      assert assigns[:problems], 'Should get problems'
     end
   end
 
-  context "GET problems#show" do
+  context 'GET problems#show' do
     setup { get :show, id: problems(:one) }
 
-    should render_template("show")
+    should render_template('show')
     should respond_with(:success)
 
-    should "get problem" do
+    should 'get problem' do
       assert_equal problems(:one), assigns[:problem]
     end
   end

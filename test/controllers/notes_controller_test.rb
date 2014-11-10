@@ -1,34 +1,30 @@
 require 'test_helper'
 
 class NotesControllerTest < ActionController::TestCase
-
-
   def valid_note
-    {body: "example"}
+    { body: 'example' }
   end
 
   def invalid_note_attributes
-    {body: ""}
+    { body: '' }
   end
 
-  context "POST :create" do
-    context "when I send invalid information" do
-      setup { post :create, { note: invalid_note_attributes } }
+  context 'POST :create' do
+    context 'when I send invalid information' do
+      setup { post :create,  note: invalid_note_attributes  }
 
-      should "render new" do
+      should 'render new' do
         assert_template :new
       end
     end
 
-    context "when I send valid information" do
-      setup { post :create, { note: valid_note } }
+    context 'when I send valid information' do
+      setup { post :create,  note: valid_note  }
 
-      should "create a new note" do
+      should 'create a new note' do
         assert_response :success
       end
     end
 
   end
 end
-
-

@@ -9,9 +9,7 @@ class ActiveSupport::TestCase
 
   fixtures :all
 
-
   class ActionController::TestCase
     include Devise::TestHelpers
   end
-
 end

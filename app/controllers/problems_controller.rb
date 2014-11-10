@@ -2,7 +2,6 @@ class ProblemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_problem, only: [:show, :destroy, :edit, :update]
 
-
   def home
   end
 
@@ -33,11 +32,9 @@ class ProblemsController < ApplicationController
     end
   end
 
-
   def create
     @problem = Problem.new
-    @problem.update(problem_params)
-    @problem.update(user: current_user)
+    @problem.update(problem_params, user: current_user)
 
     respond_to do |format|
       if @problem.save
@@ -49,8 +46,6 @@ class ProblemsController < ApplicationController
       end
     end
   end
-
-
 
   def destroy
     @problem.destroy
@@ -64,7 +59,7 @@ class ProblemsController < ApplicationController
     @problem.update(:solved)
     @problem.save
     remove_solved
-    redirect_to root_path, notice: "Your problem has been closed."
+    redirect_to root_path, notice: 'Your problem has been closed.'
   end
 
   private
@@ -72,7 +67,6 @@ class ProblemsController < ApplicationController
   def set_problem
     @problem = Problem.find(params[:id])
   end
-
 
   def problem_params
     params.require(:problem).permit(:title, :description, :tried, :solved)
