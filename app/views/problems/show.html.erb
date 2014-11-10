@@ -23,8 +23,21 @@
   </div>
 
   <div class="large-6 columns">
+<<<<<<< HEAD
     <%= render 'notes/form' %>
     <%= link_to 'Back', problems_path %>
+=======
+    <h3>Add a note to the problem:</h3>
+    <%= form_for([@problem, @problem.notes.build]), remote: true do |f| %>
+        <p>
+          <%= f.label :body %><br>
+          <%= f.text_area :body %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+    <% end %>
+>>>>>>> 58c4b9252aa69af4c3c8195e9ea18a5e9182f0ec
   </div>
 
 </div>

@@ -14,10 +14,16 @@ class NotesController < ApplicationController
     respond_to do |format|
       format.html do
         if @note.save
+<<<<<<< HEAD
           redirect_to problem_path(@problem), notice: 'Note was successfully created.'
           send_email
         else
           render :new
+=======
+          redirect_to @problem
+        else
+          render 'problems/show'
+>>>>>>> 58c4b9252aa69af4c3c8195e9ea18a5e9182f0ec
         end
       end
 
